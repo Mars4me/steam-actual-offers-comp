@@ -46,7 +46,12 @@ function App() {
                 </div>
                 <div className="carousel_thumbs">
                     {mockData.map((_, indx) => (
-                        <div key={indx} className={indx === page ? 'active' : ''}></div>
+                        <div
+                            onClick={(e) => setPage(+e.target.dataset.number)}
+                            data-number={indx}
+                            key={indx}
+                            className={indx === page ? 'active' : ''}
+                        ></div>
                     ))}
                 </div>
             </div>
