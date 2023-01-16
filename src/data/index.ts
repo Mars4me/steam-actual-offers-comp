@@ -1,6 +1,8 @@
 import { Game } from './../SpecialOfferItem';
 
-export const mockData = [
+type mockData = Array<[Game, Game, [Game, Game]]>;
+
+export const mockData: mockData = [
     [
         {
             thumbnail:
@@ -26,7 +28,6 @@ export const mockData = [
                 genre: ['Shooter', 'FPS', 'RPG'],
             },
         },
-
         [
             {
                 thumbnail: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1276790/header.jpg?t=1643427121',
@@ -52,7 +53,6 @@ export const mockData = [
             },
         ],
     ],
-
     [
         {
             thumbnail:
@@ -105,16 +105,3 @@ export const mockData = [
         ],
     ],
 ];
-
-// {
-//     thumbnail:
-//         'https://cdn.cloudflare.steamstatic.com/steam/spotlights/9b4f03af476ea351450d13d6/spotlight_image_english.jpg?t=1673305688',
-//     originalPrice: 229,
-//     discountPercent: 60,
-//     description: {
-//         name: 'Sands of Salazar',
-//         about: 'Sands of salazar. Game from China. ',
-//         releaseDate: new Date('15.01.2022'),
-//         genre: ['Open World', 'RPG', 'War'],
-//     },
-// },

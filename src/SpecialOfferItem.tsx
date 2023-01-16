@@ -11,7 +11,6 @@ export interface Game {
     thumbnail: string;
     originalPrice: number;
     discountPercent: number;
-
     description: IGameDescription;
 }
 
