@@ -1,27 +1,20 @@
+@import './Typography.css';
+@import './variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+}
 :root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-
-    color-scheme: light dark;
+    font-family: var(--font-railway);
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-}
-
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
-a:hover {
-    color: #535bf2;
 }
 
 body {
@@ -30,83 +23,195 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-}
-
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-}
-
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-button:hover {
-    border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
+    background: url('/images/colored_body_top.png?v=2') center top no-repeat #1b2838;
 }
 
 #root {
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
-    text-align: center;
 }
 
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-}
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+    z-index: auto;
+    transition: padding 0.25s;
 }
 
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* carousel */
+
+.carousel-content {
+    display: block;
+    width: 1145px;
+    height: 510px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
+.special-offer-group {
+    display: flex;
+    gap: 10px;
+    width: 940px;
+    height: 390px;
+    margin: 0 auto;
 }
 
-.card {
-    padding: 2em;
+.special-offer-item {
+    position: relative;
+    width: 100%;
+    height: 390px;
 }
 
-.read-the-docs {
-    color: #888;
+.item-wrapper {
+    position: relative;
+    height: 100%;
+    box-shadow: 0 0 5px #000000;
+}
+
+.item-wrapper_double {
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.left-arrow,
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    margin: -20px 0 0;
+    padding: 36px 11px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transform: translate(0, -38%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
+}
+
+.left-arrow {
+    left: -45px;
+}
+.right-arrow {
+    right: -45px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
+}
+
+:where(.left-arrow, .right-arrow):hover {
+    background: linear-gradient(to right, rgba(171, 218, 244, 0.3) 5%, rgba(171, 218, 244, 0) 95%);
+}
+
+.carousel_thumbs {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel_thumbs > div {
+    display: inline-block;
+    margin: 12px 2px;
+    width: 15px;
+    height: 9px;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+    background-color: hsla(202, 60%, 100%, 0.2);
+    cursor: pointer;
+}
+
+.spotlight-content {
+    position: absolute;
+    bottom: 0;
+    width: 274px;
+    min-height: 23px;
+    background-size: cover;
+    margin: 1px;
+    padding: 8px 16px 12px 16px;
+    color: #9099a1;
+    font-size: 12px;
+    background: url('/images/spotlight_background.jpg?v=1') bottom center no-repeat;
+    background-image: url('/images/background_spotlight.jpg');
+}
+
+.spotlight-content_double {
+    position: relative;
+    width: 306px;
+    margin: 0;
+    min-height: 34px;
+    padding: 5px 0;
+}
+
+.spotligh-price {
+    position: relative;
+    display: flex;
+    font-family: var(--font-montserrat);
+}
+
+.spotligh-price_double {
+    float: right;
+    padding: 0 5px;
+}
+
+.discount-prices {
+    line-height: 13px;
+    padding: 0 8px 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    background: #344654;
+}
+
+.carousel_thumbs > div.active {
+    background-color: hsla(202, 60%, 100%, 0.4);
+}
+
+.arrow-options {
+    position: absolute;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    top: 0px;
+    right: 0;
+    opacity: 0;
+    cursor: pointer;
+    padding: 5px 5px 0 0;
+    transition: opacity 0.2s, right 0.2s;
+    z-index: 15;
+}
+
+.arrow-options > div {
+    width: 15px;
+    height: 15px;
+    background-color: #e5e5e5;
+    background-image: url('/images/icon_expand_dark.png');
+    background-position: 4px 4px;
+    border-radius: 3px;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 3px #000;
+}
+
+.arrow-options > div:hover {
+    background-color: #67c1f5;
+    color: #fff;
+    background-image: url('/images/icon_expand_white.png');
+    opacity: 1;
+}
+
+.item-wrapper:hover .arrow-options {
+    right: 10px;
+    opacity: 1;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.double-spotlight-content {
+    background: linear-gradient(to bottom, #ffffff 5%, #abdaf4 95%);
+    width: 306px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 5px #000000;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
 }
