@@ -1,6 +1,6 @@
-import { Game } from './../SpecialOfferItem';
+import { IGame } from '../entity';
 
-type mockData = Array<[Game, Game, [Game, Game]]>;
+type mockData = Array<[IGame, IGame, [IGame, IGame]]>;
 
 export const mockData: mockData = [
     [

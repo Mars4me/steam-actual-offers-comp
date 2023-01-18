@@ -16,7 +16,7 @@ function App() {
               });
     };
 
-    const gameState = useMemo(() => {
+    const gameList = useMemo(() => {
         return mockData[page];
     }, [page]);
     return (
@@ -31,7 +31,7 @@ function App() {
             </h2>
             <div className="carousel_content">
                 <div className="special-offer-group">
-                    {gameState.map((element, index) =>
+                    {gameList.map((element, index) =>
                         Array.isArray(element) ? (
                             <SpecialOfferItem key={index} firstGame={element[0]} secondGame={element[1]} />
                         ) : (
@@ -48,7 +48,12 @@ function App() {
                 <div className="carousel_thumbs">
                     {mockData.map((_, indx) => (
                         <div
-                            onClick={(e: MouseEvent<EventTarget>) => setPage(+e.target.dataset.number)}
+                            onClick={(event: MouseEvent<HTMLDivElement>) => {
+                                const target = event.target as HTMLDivElement;
+                                if (target.dataset['number']) {
+                                    setPage(+target.dataset['number']);
+                                }
+                            }}
                             data-number={indx}
                             key={indx}
                             className={indx === page ? 'active' : ''}

@@ -1,22 +1,9 @@
 import { FC } from 'react';
-
-interface IGameDescription {
-    name: string;
-    about: string;
-    releaseDate: Date;
-    genre: string[];
-}
-
-export interface Game {
-    thumbnail: string;
-    originalPrice: number;
-    discountPercent: number;
-    description: IGameDescription;
-}
+import { IGame } from './entity';
 
 interface SpecialOfferItemProp {
-    firstGame: Game;
-    secondGame?: Game;
+    firstGame: IGame;
+    secondGame?: IGame;
 }
 
 const getFinalPrice = (originalPrice: number, discount: number): number => Math.round((originalPrice / 100) * (100 - discount));
@@ -29,7 +16,7 @@ const SpecialOfferItem: FC<SpecialOfferItemProp> = ({ firstGame, secondGame }) =
     );
 };
 
-const OneGame = ({ game }: { game: Game }) => {
+const OneGame = ({ game }: { game: IGame }) => {
     return (
         <div className="item-wrapper">
             <a href={'#'}>
@@ -67,7 +54,7 @@ const BothGame = ({ firstGame, secondGame }: Required<SpecialOfferItemProp>) => 
     );
 };
 
-const HorizontalGameComp = ({ game }: { game: Game }) => {
+const HorizontalGameComp = ({ game }: { game: IGame }) => {
     return (
         <div className="item-wrapper item-wrapper_double ">
             <a href={'#'}>
